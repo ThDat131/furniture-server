@@ -13,6 +13,12 @@ export class Product {
     @Prop({ required: true })
     images: string[];
 
+    @Prop({ required: true })
+    price: number;
+
+    @Prop({ required: true })
+    stock: number;
+
     @Prop({ type: mongoose.Schema.Types.ObjectId, ref: 'Category' })
     categoryId: Category;
 }

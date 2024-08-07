@@ -7,7 +7,9 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [
-        MongooseModule.forRoot('mongodb://localhost:27017/furniture-db'),
+        MongooseModule.forRoot(
+            'mongodb://root:evyOuYcEVpneAjx@localhost:27017/',
+        ),
         UsersModule,
         CategoryModule,
         ProductModule,
