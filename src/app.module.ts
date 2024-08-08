@@ -8,7 +8,8 @@ import { AuthModule } from './auth/auth.module';
 @Module({
     imports: [
         MongooseModule.forRoot(
-            'mongodb://root:evyOuYcEVpneAjx@localhost:27017/',
+            // 'mongodb://root:evyOuYcEVpneAjx@localhost:27017/',
+            'mongodb+srv://admin:123@furniturecluster.oqywp.mongodb.net/?retryWrites=true&w=majority&appName=furnitureCluster',
         ),
         UsersModule,
         CategoryModule,
