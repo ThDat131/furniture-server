@@ -3,12 +3,14 @@ import {
     Controller,
     Get,
     Post,
+    UseGuards,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
-import { UsersService } from './users.service';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { RolesGuard } from 'src/roleGuard/role.guard';
 import { CreateUserDto } from './dto/create-user.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { UsersService } from './users.service';
 
 @ApiTags('Users')
 @Controller('users')
@@ -22,6 +24,8 @@ export class UsersController {
     }
 
     @Get()
+    @ApiBearerAuth()
+    @UseGuards(RolesGuard)
     getUser() {
         return this.userService.getUsers();
     }
