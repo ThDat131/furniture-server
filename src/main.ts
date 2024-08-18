@@ -30,14 +30,13 @@ async function bootstrap() {
             'x-no-retry',
         ],
     });
+    app.useGlobalPipes(new ValidationPipe());
+    app.useGlobalInterceptors(new TransformInterceptor());
+    app.useGlobalFilters(new HttpExceptionFilter());
 
     const document = SwaggerModule.createDocument(app, config);
 
     SwaggerModule.setup('swagger', app, document);
-
-    app.useGlobalPipes(new ValidationPipe());
-    app.useGlobalInterceptors(new TransformInterceptor());
-    app.useGlobalFilters(new HttpExceptionFilter());
 
     await app.listen(4000);
 }

@@ -11,6 +11,7 @@ import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { RolesGuard } from 'src/roleGuard/role.guard';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
+import { Public } from 'src/custom-decorator/customize';
 
 @ApiTags('Users')
 @Controller('users')
@@ -18,6 +19,7 @@ export class UsersController {
     constructor(private userService: UsersService) {}
 
     @Post()
+    @Public()
     @UsePipes(new ValidationPipe())
     createUser(@Body() createUserDto: CreateUserDto) {
         return this.userService.createUser(createUserDto);

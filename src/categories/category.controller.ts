@@ -1,8 +1,11 @@
 import {
     Body,
     Controller,
+    Delete,
     Get,
+    Param,
     Post,
+    Put,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
@@ -27,5 +30,17 @@ export class CategoryController {
     @Public()
     getCategories() {
         return this.categoryService.getCategories();
+    }
+
+    @Delete(':id')
+    @Public()
+    removeCategory(@Param('id') id: string) {
+        return this.categoryService.removeCategory(id);
+    }
+
+    @Put(':id')
+    @Public()
+    updateCategory(@Param('id') id: string, @Body() data: CreateCategoryDto) {
+        return this.categoryService.updateCategory(id, data);
     }
 }

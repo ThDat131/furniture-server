@@ -1,8 +1,11 @@
 import {
     Body,
     Controller,
+    Delete,
     Get,
+    Param,
     Post,
+    Put,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
@@ -27,5 +30,17 @@ export class ProductsController {
     @Public()
     getProducts() {
         return this.productService.getProducts();
+    }
+
+    @Delete(':id')
+    @Public()
+    removeProduct(@Param('id') id: string) {
+        return this.productService.removeProduct(id);
+    }
+
+    @Put(':id')
+    @Public()
+    updateProduct(@Param('id') id: string, @Body() data: CreateProductDto) {
+        return this.productService.updateProduct(id, data);
     }
 }
