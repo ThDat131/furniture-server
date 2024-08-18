@@ -19,4 +19,14 @@ export class CategoryService {
     getCategories() {
         return this.categoryModel.find();
     }
+
+    removeCategory(id: string) {
+        return this.categoryModel.findByIdAndDelete(id);
+    }
+
+    updateCategory(id: string, data: Partial<Category>) {
+        return this.categoryModel.findByIdAndUpdate(id, data, {
+            new: true,
+        });
+    }
 }

@@ -17,6 +17,16 @@ export class ProductService {
     }
 
     getProducts() {
-        return this.productModel.find();
+        return this.productModel.find().populate(['categoryId']);
+    }
+
+    removeProduct(id: string) {
+        return this.productModel.findByIdAndDelete(id);
+    }
+
+    updateProduct(id: string, data: Partial<CreateProductDto>) {
+        return this.productModel.findByIdAndUpdate(id, data, {
+            new: true,
+        });
     }
 }

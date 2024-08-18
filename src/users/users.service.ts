@@ -20,6 +20,7 @@ export class UsersService {
             fullName: createUserDto.fullName,
             password: hashPassword,
             username: createUserDto.username,
+            role: createUserDto.role,
         });
 
         return newUser.save();

@@ -2,6 +2,11 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import mongoose from 'mongoose';
 import { Category } from './category.schema';
 
+interface IImage {
+    url: string;
+    id: string;
+}
+
 @Schema()
 export class Product {
     @Prop({ required: true })
@@ -11,7 +16,7 @@ export class Product {
     description: string;
 
     @Prop({ required: true })
-    images: string[];
+    images: IImage[];
 
     @Prop({ required: true })
     price: number;
