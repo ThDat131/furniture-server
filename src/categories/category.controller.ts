@@ -32,6 +32,12 @@ export class CategoryController {
         return this.categoryService.getCategories();
     }
 
+    @Get(':id')
+    @Public()
+    getCategory(@Param('id') id: string) {
+        return this.categoryService.getCategory(id);
+    }
+
     @Delete(':id')
     @Public()
     removeCategory(@Param('id') id: string) {

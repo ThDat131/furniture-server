@@ -32,6 +32,12 @@ export class ProductsController {
         return this.productService.getProducts();
     }
 
+    @Get(':id')
+    @Public()
+    getProduct(@Param('id') id: string) {
+        return this.productService.getProduct(id);
+    }
+
     @Delete(':id')
     @Public()
     removeProduct(@Param('id') id: string) {

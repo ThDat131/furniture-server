@@ -20,6 +20,10 @@ export class ProductService {
         return this.productModel.find().populate(['categoryId']);
     }
 
+    getProduct(id: string) {
+        return this.productModel.findById(id);
+    }
+
     removeProduct(id: string) {
         return this.productModel.findByIdAndDelete(id);
     }

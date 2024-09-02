@@ -20,6 +20,10 @@ export class CategoryService {
         return this.categoryModel.find();
     }
 
+    getCategory(id: string) {
+        return this.categoryModel.findById(id);
+    }
+
     removeCategory(id: string) {
         return this.categoryModel.findByIdAndDelete(id);
     }
