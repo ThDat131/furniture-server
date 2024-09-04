@@ -6,6 +6,10 @@ import { ProductModule } from './products/product.module';
 import { AuthModule } from './auth/auth.module';
 import { FileModule } from './file/file.module';
 import { ConfigModule } from '@nestjs/config';
+import { JobAdsModule } from './job-ads/job-ads.module';
+import { BannerModule } from './banners/banner.module';
+import { ContactModule } from './contacts/contact.module';
+import { SeederModule } from './seeder/seeder.module';
 
 @Module({
     imports: [
@@ -19,6 +23,10 @@ import { ConfigModule } from '@nestjs/config';
         ProductModule,
         AuthModule,
         FileModule,
+        JobAdsModule,
+        BannerModule,
+        ContactModule,
+        SeederModule,
     ],
     controllers: [],
     providers: [],

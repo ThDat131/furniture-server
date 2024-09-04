@@ -6,6 +6,7 @@ import {
     Param,
     Post,
     Put,
+    Query,
     UsePipes,
     ValidationPipe,
 } from '@nestjs/common';
@@ -28,8 +29,11 @@ export class ProductsController {
 
     @Get()
     @Public()
-    getProducts() {
-        return this.productService.getProducts();
+    getProducts(
+        @Query('isNew') isNew?: boolean,
+        @Query('isPotential') isPotential?: boolean,
+    ) {
+        return this.productService.getProducts(isNew, isPotential);
     }
 
     @Get(':id')
