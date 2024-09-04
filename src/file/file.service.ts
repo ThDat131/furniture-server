@@ -12,8 +12,6 @@ export class FileService {
             resource_type: 'image',
         };
 
-        console.log(files);
-
         return new Promise((resolve, reject) => {
             const uploadPromises = files.map(
                 (file) =>
