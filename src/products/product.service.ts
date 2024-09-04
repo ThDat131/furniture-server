@@ -44,7 +44,13 @@ export class ProductService {
         return this.productModel.find({ categoryId });
     }
 
-    removeProduct(id: string) {
+    async removeProduct(id: string) {
+        const product = await this.productModel.findById(id).exec();
+
+        product.images.map((x) => {
+            this.fileService.removeFile(x.id);
+        });
+
         return this.productModel.findByIdAndDelete(id);
     }
 

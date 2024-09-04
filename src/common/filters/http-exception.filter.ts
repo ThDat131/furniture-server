@@ -19,12 +19,19 @@ export class HttpExceptionFilter implements ExceptionFilter {
                 ? exception.getStatus()
                 : HttpStatus.INTERNAL_SERVER_ERROR;
 
+        const responseObject = exception.getResponse() as any;
+        const errorArray = responseObject?.message;
+        console.log(errorArray);
+        let errorText = undefined;
+
+        if (isArray(errorArray)) {
+            errorText = errorArray.join(';');
+        }
+
         const errorResponse: ApiResponse<null> = {
             success: false,
-            error: exception.message,
+            error: errorText ?? exception.message,
         };
-
-        console.log(exception);
 
         response.status(status).json(errorResponse);
     }
