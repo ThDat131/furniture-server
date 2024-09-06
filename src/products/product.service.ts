@@ -3,11 +3,13 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Product } from 'src/schemas/product.schema';
 import { CreateProductDto } from './dto/create-product.dto';
+import { FileService } from '../file/file.service';
 
 @Injectable()
 export class ProductService {
     constructor(
         @InjectModel(Product.name) private productModel: Model<Product>,
+        private fileService: FileService,
     ) {}
 
     createProduct(product: CreateProductDto) {
@@ -16,8 +18,20 @@ export class ProductService {
         return newProduct.save();
     }
 
-    getProducts() {
-        return this.productModel.find().populate(['categoryId']);
+    getProducts(isNew?: boolean, isPotential?: boolean) {
+        let filter = {};
+        if (isNew) {
+            filter = {
+                isNew: true,
+            };
+        }
+        if (isPotential) {
+            filter = {
+                isNew: true,
+            };
+        }
+
+        return this.productModel.find(filter).populate(['categoryId']);
     }
 
     getProduct(id: string) {

@@ -5,6 +5,7 @@ import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { TransformInterceptor } from './common/interceptors/transform.interceptor';
 import { HttpExceptionFilter } from './common/filters/http-exception.filter';
 import { JwtAuthGuard } from './auth/guards/jwt.guard';
+import { SeederService } from './seeder/seeder.service';
 
 async function bootstrap() {
     const config = new DocumentBuilder()
@@ -13,6 +14,11 @@ async function bootstrap() {
         .setVersion('1.0')
         .build();
     const app = await NestFactory.create(AppModule);
+
+    // Init data
+    const seeder = app.get(SeederService);
+    await seeder.seed();
+
     const reflector = app.get(Reflector);
 
     app.useGlobalGuards(new JwtAuthGuard(reflector));

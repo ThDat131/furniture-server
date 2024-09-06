@@ -1,18 +1,18 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({ timestamps: true })
-export class User {
+export class Contact {
     @Prop({ unique: true, required: true })
-    username: string;
+    name: string;
 
     @Prop({ required: true })
-    fullName: string;
+    email: string;
 
     @Prop({ required: true })
-    password: string;
+    message: string;
 
-    @Prop({ required: true })
-    role: string;
+    @Prop({ requied: true })
+    isResolved: boolean;
 }
 
-export const UserSchema = SchemaFactory.createForClass(User);
+export const ContactSchema = SchemaFactory.createForClass(Contact);
