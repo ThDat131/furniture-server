@@ -24,6 +24,10 @@ export class ProductService {
         return this.productModel.findById(id);
     }
 
+    getProductByCategoryId(categoryId: string) {
+        return this.productModel.find({ categoryId });
+    }
+
     removeProduct(id: string) {
         return this.productModel.findByIdAndDelete(id);
     }
