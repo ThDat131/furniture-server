@@ -7,7 +7,6 @@ import {
 } from '@nestjs/common';
 import { Response } from 'express';
 import { ApiResponse } from '../interfaces/api-response.interface';
-import { isArray } from 'class-validator';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
@@ -23,6 +22,11 @@ export class HttpExceptionFilter implements ExceptionFilter {
             success: false,
             error: exception.message,
         };
+
+        console.log(exception);
+
+        console.log(exception.getResponse());
+
         response.status(status).json(errorResponse);
     }
 }
