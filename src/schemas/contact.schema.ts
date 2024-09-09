@@ -2,7 +2,7 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema({ timestamps: true })
 export class Contact {
-    @Prop({ unique: true, required: true })
+    @Prop({ required: true })
     name: string;
 
     @Prop({ required: true })
@@ -11,7 +11,7 @@ export class Contact {
     @Prop({ required: true })
     message: string;
 
-    @Prop({ requied: true })
+    @Prop({ required: true })
     isResolved: boolean;
 }
 
