@@ -42,7 +42,7 @@ export class ProductsController {
     getProduct(@Param('id') id: string) {
         return this.productService.getProduct(id);
     }
-
+    
     @Delete(':id')
     @Public()
     removeProduct(@Param('id') id: string) {
