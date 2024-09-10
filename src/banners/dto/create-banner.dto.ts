@@ -7,5 +7,5 @@ export class CreateBannerDto {
     name: string;
 
     @IsNotEmpty()
-    images: IImage;
+    image: IImage;
 }

@@ -42,11 +42,11 @@ export class ProductsController {
         return this.productService.getProduct(id);
     }
 
-    @Get(':categoryId')
-    @Public()
-    getProductByCategoryId(@Param('categoryId') categoryId: string) {
-        return this.productService.getProductByCategoryId(categoryId);
-    }
+    // @Get('category/:categoryId')
+    // @Public()
+    // getProductByCategoryId(@Param('categoryId') categoryId: string) {
+    //     return this.productService.getProductByCategoryId(categoryId);
+    // }
 
     @Delete(':id')
     @Public()
