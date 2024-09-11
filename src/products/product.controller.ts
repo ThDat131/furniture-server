@@ -32,8 +32,9 @@ export class ProductsController {
     getProducts(
         @Query('isNew') isNew?: boolean,
         @Query('isPotential') isPotential?: boolean,
+        @Query('category') category?: string,
     ) {
-        return this.productService.getProducts(isNew, isPotential);
+        return this.productService.getProducts(isNew, isPotential, category);
     }
 
     @Get(':id')
@@ -41,12 +42,6 @@ export class ProductsController {
     getProduct(@Param('id') id: string) {
         return this.productService.getProduct(id);
     }
-
-    // @Get('category/:categoryId')
-    // @Public()
-    // getProductByCategoryId(@Param('categoryId') categoryId: string) {
-    //     return this.productService.getProductByCategoryId(categoryId);
-    // }
 
     @Delete(':id')
     @Public()

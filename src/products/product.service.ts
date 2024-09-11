@@ -18,17 +18,19 @@ export class ProductService {
         return newProduct.save();
     }
 
-    getProducts(isNew?: boolean, isPotential?: boolean) {
-        let filter = {};
-        if (isNew) {
-            filter = {
-                isNew: true,
-            };
+    getProducts(isNew?: boolean, isPotential?: boolean, category?: string) {
+        let filter: any = {};
+
+        if (category) {
+            filter.categoryId = category;
         }
-        if (isPotential) {
-            filter = {
-                isNew: true,
-            };
+
+        if (isNew && isNew.toString() === 'true') {
+            filter.isNew = true;
+        }
+
+        if (isPotential && isPotential.toString() === 'true') {
+            filter.isPotential = true;
         }
 
         return this.productModel.find(filter).populate(['categoryId']);
