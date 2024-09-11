@@ -28,16 +28,19 @@ export class ContactController {
     }
 
     @Get()
+    @Public()
     getContact(@Query('email') email?: string) {
         return this.contactService.getContact(email);
     }
 
     @Delete(':id')
+    @Public()
     removeProduct(@Param('id') id: string) {
         return this.contactService.removeContact(id);
     }
 
     @Put(':id')
+    @Public()
     updateContact(@Param('id') id: string, @Body() data: CreateContactDto) {
         return this.contactService.updateContact(id, data);
     }
