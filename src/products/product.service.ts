@@ -18,16 +18,24 @@ export class ProductService {
         return newProduct.save();
     }
 
-    getProducts(isNew?: boolean, isPotential?: boolean) {
+    getProducts(isNew?: boolean, isPotential?: boolean, categoty?: string) {
         let filter = {};
-        if (isNew) {
+        if (isNew.toString() === 'true') {
             filter = {
                 isNew: true,
+                ...filter,
             };
         }
-        if (isPotential) {
+        if (isPotential.toString() === 'true') {
             filter = {
-                isNew: true,
+                isPotential: true,
+                ...filter,
+            };
+        }
+        if (categoty) {
+            filter = {
+                categotyId: categoty,
+                ...filter,
             };
         }
 
