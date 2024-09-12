@@ -32,6 +32,7 @@ export class ProductsController {
     getProducts(
         @Query('isNew') isNew?: boolean,
         @Query('isPotential') isPotential?: boolean,
+        @Query('category2') category2?: string,
     ) {
         return this.productService.getProducts(isNew, isPotential);
     }
@@ -41,7 +42,7 @@ export class ProductsController {
     getProduct(@Param('id') id: string) {
         return this.productService.getProduct(id);
     }
-    
+
     @Delete(':id')
     @Public()
     removeProduct(@Param('id') id: string) {
