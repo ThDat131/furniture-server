@@ -18,6 +18,10 @@ export class JobAdsService {
         return this.jobAdsModel.find();
     }
 
+    getJobAdsById(id: string) {
+        return this.jobAdsModel.findById(id);
+    }
+
     removeJobAds(id: string) {
         return this.jobAdsModel.findByIdAndDelete(id);
     }

@@ -31,6 +31,12 @@ export class JobAdsController {
         return this.jobAdsService.getJobAds();
     }
 
+    @Get(':id')
+    @Public()
+    getJobAdsById(@Param('id') id: string) {
+        return this.jobAdsService.getJobAdsById(id);
+    }
+
     @Delete(':id')
     @Public()
     removeJobAds(@Param('id') id: string) {
@@ -38,7 +44,6 @@ export class JobAdsController {
     }
 
     @Put(':id')
-    @Public()
     updateJobAds(@Param('id') id: string, @Body() data: CreateJobAdsDto) {
         return this.jobAdsService.updateJobAds(id, data);
     }
