@@ -32,10 +32,10 @@ export class ProductsController {
     getProducts(
         @Query('isNew') isNew?: boolean,
         @Query('isPotential') isPotential?: boolean,
-        @Query('categoty') categoty?: string,
+        @Query('category') category?: string,
 
     ) {
-        return this.productService.getProducts(isNew, isPotential, categoty);
+        return this.productService.getProducts(isNew, isPotential, category);
     }
 
     @Get(':id')
