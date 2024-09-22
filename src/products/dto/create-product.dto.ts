@@ -22,4 +22,10 @@ export class CreateProductDto {
     @IsNotEmpty()
     @IsString()
     categoryId: string;
+
+    @IsNotEmpty()
+    isNew: boolean;
+
+    @IsNotEmpty()
+    isPotential: boolean;
 }

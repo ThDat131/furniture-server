@@ -33,7 +33,6 @@ export class ProductsController {
         @Query('isNew') isNew?: boolean,
         @Query('isPotential') isPotential?: boolean,
         @Query('category') category?: string,
-
     ) {
         return this.productService.getProducts(isNew, isPotential, category);
     }
