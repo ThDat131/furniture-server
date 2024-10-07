@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - '${PORT}:${PORT}'
+    depends_on:
+      - mongodb
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=${DATABASE_CONNECTION_STRING}
+      - PORT=${PORT}  
+    volumes:
+      - .:/usr/src/app
+    networks:
+      - nest-network
+
+  mongodb:
+    image: mongo:latest
+    ports:
+      - '27017:27017'
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
+    networks:
+      - nest-network
+
+networks:
+  nest-network:
+    driver: bridge
