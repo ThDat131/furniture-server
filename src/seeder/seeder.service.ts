@@ -97,7 +97,6 @@ export class SeederService {
     private async createBanners() {
         const banners = [
             {
-                _id: '66dd77791633f06f3690e055',
                 name: 'homeBannerImg',
                 image: {
                     id: 'furniture/images/fmkhxtsnjhq78r4ro2hc',
@@ -105,7 +104,6 @@ export class SeederService {
                 },
             },
             {
-                _id: '66dfc75f8fc18bf2bbda03dc',
                 name: 'recruitmentBannerImg',
                 image: {
                     id: 'furniture/images/p75ezsci3bxm2bumg3tx',
@@ -113,7 +111,6 @@ export class SeederService {
                 },
             },
             {
-                _id: '66dfc8368a5cc08c883fb212',
                 name: 'policyBannerImg',
                 image: {
                     id: 'furniture/images/xootrg3o5tuf699gwavp',
@@ -122,14 +119,10 @@ export class SeederService {
             },
         ];
 
-        console.log(banners);
-
         for (const banner of banners) {
             const existingBanner = await this.bannerModel.findOne({
                 name: banner.name,
             });
-
-            console.log(135, existingBanner);
 
             if (!existingBanner) this.bannerModel.create(banner);
         }
@@ -138,7 +131,6 @@ export class SeederService {
     private async createProducts() {
         const products = [
             {
-                _id: '66d4eba822ceaa540da11ee3',
                 name: 'Đèn năng lượng',
                 description: 'Đèn năng lượng mặt trời',
                 images: [
@@ -154,8 +146,6 @@ export class SeederService {
                 isPotential: true,
             },
             {
-                _id: '66daedfee95736c3b11b850d',
-
                 name: 'Ghế dựa',
                 description: 'Ghế đọc sách',
                 images: [

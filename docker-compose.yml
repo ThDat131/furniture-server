@@ -3,6 +3,8 @@ version: '3.8'
 services:
   app:
     build: .
+    env_file:
+      - path: ./.env
     ports:
       - '${PORT}:${PORT}'
     depends_on:
@@ -11,8 +13,6 @@ services:
       - NODE_ENV=production
       - MONGODB_URI=${DATABASE_CONNECTION_STRING}
       - PORT=${PORT}  
-    volumes:
-      - .:/usr/src/app
     networks:
       - nest-network
 
@@ -21,7 +21,7 @@ services:
     ports:
       - '27017:27017'
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=mongo
+      - MONGO_INITDB_ROOT_USERNAME=${MONGODB_ROOT_NAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGODB_ROOT_PASSWORD}
     networks:
       - nest-network
