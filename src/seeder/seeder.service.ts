@@ -100,21 +100,21 @@ export class SeederService {
                 name: 'homeBannerImg',
                 image: {
                     id: 'furniture/images/fmkhxtsnjhq78r4ro2hc',
-                    url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725887284/furniture/images/fmkhxtsnjhq78r4ro2hc.jpg',
+                    url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725887284/furniture/images/fmkhxtsnjhq78r4ro2hc.jpg',
                 },
             },
             {
                 name: 'recruitmentBannerImg',
                 image: {
                     id: 'furniture/images/p75ezsci3bxm2bumg3tx',
-                    url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725943365/furniture/images/p75ezsci3bxm2bumg3tx.jpg',
+                    url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725943365/furniture/images/p75ezsci3bxm2bumg3tx.jpg',
                 },
             },
             {
                 name: 'policyBannerImg',
                 image: {
                     id: 'furniture/images/xootrg3o5tuf699gwavp',
-                    url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725946233/furniture/images/xootrg3o5tuf699gwavp.jpg',
+                    url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725946233/furniture/images/xootrg3o5tuf699gwavp.jpg',
                 },
             },
         ];
@@ -136,7 +136,7 @@ export class SeederService {
                 images: [
                     {
                         id: 'furniture/images/tucjtguaz1w0ozrxzrhq',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725230156/furniture/images/tucjtguaz1w0ozrxzrhq.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725230156/furniture/images/tucjtguaz1w0ozrxzrhq.jpg',
                     },
                 ],
                 price: 99998,
@@ -151,11 +151,11 @@ export class SeederService {
                 images: [
                     {
                         id: 'furniture/images/f0mft8j6s4xz1x73qkra',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725623792/furniture/images/f0mft8j6s4xz1x73qkra.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725623792/furniture/images/f0mft8j6s4xz1x73qkra.jpg',
                     },
                     {
                         id: 'furniture/images/thnygfxya9qjtndhdozb',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725627976/furniture/images/thnygfxya9qjtndhdozb.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725627976/furniture/images/thnygfxya9qjtndhdozb.jpg',
                     },
                 ],
                 price: 600000,
@@ -170,15 +170,15 @@ export class SeederService {
                 images: [
                     {
                         id: 'furniture/images/etd2t5cclyufghmqbgrd',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725628112/furniture/images/etd2t5cclyufghmqbgrd.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725628112/furniture/images/etd2t5cclyufghmqbgrd.jpg',
                     },
                     {
                         id: 'furniture/images/mb5dpvqofw3ldomkpkji',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725628132/furniture/images/mb5dpvqofw3ldomkpkji.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725628132/furniture/images/mb5dpvqofw3ldomkpkji.jpg',
                     },
                     {
                         id: 'furniture/images/iy2m9iaitktvbqsku2jn',
-                        url: 'http://res.cloudinary.com/dgyytgkae/image/upload/v1725628149/furniture/images/iy2m9iaitktvbqsku2jn.jpg',
+                        url: 'https://res.cloudinary.com/dgyytgkae/image/upload/v1725628149/furniture/images/iy2m9iaitktvbqsku2jn.jpg',
                     },
                 ],
                 price: 1000000,
