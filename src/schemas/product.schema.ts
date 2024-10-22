@@ -8,11 +8,41 @@ export class Product {
     @Prop({ required: true })
     name: string;
 
+    @Prop({ required: true })
+    overview: string;
+
     @Prop()
+    introduction: string;
+
+    @Prop({ required: true })
     description: string;
 
     @Prop({ required: true })
-    images: IImage[];
+    descriptionTitle: string;
+
+    @Prop()
+    subDescription: string;
+
+    @Prop({ required: true })
+    design: string;
+
+    @Prop({ required: true })
+    characteristic: string;
+
+    @Prop()
+    specifications: string;
+
+    @Prop({ required: true })
+    images: [IImage, IImage, IImage];
+
+    @Prop()
+    specificationImages: [IImage, IImage];
+
+    @Prop({ type: Object })
+    certificateImages: [IImage, IImage, IImage];
+
+    @Prop({ type: Object })
+    catalogImage: IImage;
 
     @Prop({ required: true })
     price: number;
