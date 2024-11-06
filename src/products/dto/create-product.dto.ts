@@ -1,4 +1,11 @@
-import { IsArray, IsNotEmpty, IsNumber, IsString } from 'class-validator';
+import {
+    IsArray,
+    IsNotEmpty,
+    IsNumber,
+    IsOptional,
+    IsString,
+} from 'class-validator';
+import { IImage } from 'src/common/interfaces/image.interface';
 
 export class CreateProductDto {
     @IsNotEmpty()
@@ -9,7 +16,7 @@ export class CreateProductDto {
     description: string;
 
     @IsArray()
-    images: string[];
+    images: [IImage, IImage, IImage];
 
     @IsNotEmpty()
     @IsNumber()
@@ -28,4 +35,41 @@ export class CreateProductDto {
 
     @IsNotEmpty()
     isPotential: boolean;
+
+    @IsNotEmpty()
+    @IsString()
+    overview: string;
+
+    @IsNotEmpty()
+    @IsString()
+    introduction: string;
+
+    @IsNotEmpty()
+    @IsString()
+    descriptionTitle: string;
+
+    @IsString()
+    subDescription: string;
+
+    @IsNotEmpty()
+    @IsString()
+    design: string;
+
+    @IsNotEmpty()
+    @IsString()
+    characteristic: string;
+
+    @IsNotEmpty()
+    @IsString()
+    specifications: string;
+
+    @IsOptional()
+    @IsArray()
+    specificationImages: [IImage, IImage];
+
+    @IsOptional()
+    @IsArray()
+    certificateImages: [IImage, IImage, IImage];
+
+    catalogImage: IImage;
 }

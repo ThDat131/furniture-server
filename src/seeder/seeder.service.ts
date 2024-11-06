@@ -20,10 +20,10 @@ export class SeederService {
     ) {}
 
     async seed() {
-        await this.createUsers();
-        await this.createBanners();
-        await this.createCategories();
-        await this.createProducts();
+        // await this.createUsers();
+        // await this.createBanners();
+        // await this.createCategories();
+        // await this.createProducts();
     }
 
     private async createCategories() {
