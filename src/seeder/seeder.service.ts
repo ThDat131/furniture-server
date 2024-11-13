@@ -29,7 +29,6 @@ export class SeederService {
     private async createCategories() {
         const categories = [
             {
-                _id: '66d83be4cdc651edcb87be30',
                 name: 'Đèn bàn',
                 image: {
                     url: 'https://denledsct.com/wp-content/uploads/2018/08/RD_RL_26.jpg',
@@ -37,7 +36,6 @@ export class SeederService {
                 },
             },
             {
-                _id: '66d83bef3512bbddbf74403d',
                 name: 'Ghế',
                 image: {
                     url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9ddSOlBjHLudnvNiemNzPXHGhrkw7VNLd3g&s',
@@ -45,7 +43,6 @@ export class SeederService {
                 },
             },
             {
-                _id: '66d83bf94618e07a034d6e8c',
                 name: 'Bàn',
                 image: {
                     url: 'https://down-vn.img.susercontent.com/file/41d61f0c28d0fa6660f5d0dc03089159_tn',
