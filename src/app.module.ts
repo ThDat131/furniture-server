@@ -10,6 +10,7 @@ import { JobAdsModule } from './job-ads/job-ads.module';
 import { BannerModule } from './banners/banner.module';
 import { ContactModule } from './contacts/contact.module';
 import { SeederModule } from './seeder/seeder.module';
+import { ActivitiesModule } from './activities/activities.module';
 
 @Module({
     imports: [
@@ -27,6 +28,7 @@ import { SeederModule } from './seeder/seeder.module';
         BannerModule,
         ContactModule,
         SeederModule,
+        ActivitiesModule,
     ],
     controllers: [],
     providers: [],
