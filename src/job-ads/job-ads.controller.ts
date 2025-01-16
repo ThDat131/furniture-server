@@ -38,7 +38,6 @@ export class JobAdsController {
     }
 
     @Delete(':id')
-    @Public()
     removeJobAds(@Param('id') id: string) {
         return this.jobAdsService.removeJobAds(id);
     }
