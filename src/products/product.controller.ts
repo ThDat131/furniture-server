@@ -21,7 +21,6 @@ export class ProductsController {
     constructor(private productService: ProductService) {}
 
     @Post()
-    @Public()
     @UsePipes(new ValidationPipe())
     createProduct(@Body() product: CreateProductDto) {
         return this.productService.createProduct(product);
@@ -44,13 +43,11 @@ export class ProductsController {
     }
 
     @Delete(':id')
-    @Public()
     removeProduct(@Param('id') id: string) {
         return this.productService.removeProduct(id);
     }
 
     @Put(':id')
-    @Public()
     updateProduct(@Param('id') id: string, @Body() data: CreateProductDto) {
         return this.productService.updateProduct(id, data);
     }
